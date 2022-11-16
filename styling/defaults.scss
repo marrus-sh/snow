@@ -1,0 +1,73 @@
+@charset "UTF-8";
+@import 'palettes';
+
+//  This stylesheet assigns the default values to SCSS variables used by the Snow frontend.
+//  You can browse this file to gather a sense for what customizations are available.
+
+/*  FONTS  */
+
+//  Including font files is outside of the scope of this package.
+//  You should do that yourself by editing the home view.
+
+$snow-sans  : "ChicagoFLF", "Chicago", "Arial Black", "Impact", "Liberation Sans", sans-serif !default;
+$snow-serif : "Times", "Times New Roman", "Liberation Serif", serif !default;
+$snow-mono  : "Andalé Mono", "Monaco", "Bitstream Vera", "DejaVu", "Courier New", "Liberation Mono", monospace !default;
+
+/*  SIMPLE COLOURS  */
+
+//  For those without a lot of patience.
+
+$snow-backlight : $print-white;
+$snow-inkcolour : $print-black;
+$snow-notactive : $print-medium;
+
+/*  OPACITIES  */
+
+$snow-username-commat     : .6;
+
+/*  FILTERS  */
+
+$snow-image-filter : saturate(250%) contrast(1000%) grayscale(100%);
+
+/*  BACKGROUNDS  */
+
+//  These don't have to be plain colours if you don't want them to be.
+
+$snow-background : $print-light;
+
+/*  ADVANCED COLOURS  */
+
+//  Incredibly precise colour management.
+
+$snow-auth-background          : $snow-backlight;
+$snow-auth-foreground          : $snow-inkcolour;
+$snow-auth-border              : $snow-auth-foreground;
+$snow-auth-header-background   : $snow-auth-foreground;
+$snow-auth-header-foreground   : $snow-auth-background;
+$snow-auth-paragraph           : $snow-notactive;
+$snow-auth-input-background    : $snow-auth-background;
+$snow-auth-input-foreground    : $snow-auth-foreground;
+$snow-auth-input-border        : $snow-auth-foreground;
+$snow-auth-button-background   : $snow-auth-background;
+$snow-auth-button-foreground   : $snow-auth-foreground;
+$snow-auth-button-border       : $snow-auth-foreground;
+$snow-header-background        : $snow-backlight;
+$snow-header-foreground        : $snow-inkcolour;
+$snow-header-border            : $snow-header-foreground;
+$snow-window-background        : $snow-backlight;
+$snow-window-foreground        : $snow-inkcolour;
+$snow-window-border            : $snow-window-foreground;
+$snow-window-nav-border        : $snow-window-border;
+$snow-window-header-background : $snow-backlight;
+$snow-window-header-foreground : $snow-inkcolour;
+$snow-window-header-border     : $snow-window-border;
+$snow-window-avatar-border     : $snow-window-header-background;
+$snow-post-border              : $snow-inkcolour;
+$snow-post-avatar-border       : $snow-post-border;
+$snow-post-message-background  : $snow-backlight;
+$snow-post-message-foreground  : $snow-inkcolour;
+$snow-post-message-border      : $snow-post-message-foreground;
+$snow-post-nsfw-background     : $snow-inkcolour;
+$snow-post-nsfw-foreground     : $snow-backlight;
+$snow-post-nsfw-border         : $snow-post-nsfw-foreground;
+$snow-post-footer-foreground   : $snow-notactive;

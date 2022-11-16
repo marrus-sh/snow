@@ -1,0 +1,433 @@
+@charset "UTF-8";
+
+*.🌨 *.🌨📰 {
+    display: block;
+    position: relative;
+    margin: 0;
+    font-family: $snow-serif;
+    font-size: 1.27rem;
+    line-height: 1.2;
+    text-align: justify;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    white-space: pre-wrap;
+    
+    &[data-snow-message]:not([data-snow-message=""])::after {
+        display: block;
+        display: -webkit-flex;
+        -webkit-flex-direction: column;
+        -webkit-align-items: center;
+        -webkit-justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        border: 1px $snow-post-message-border solid;
+        border-radius: .15rem;
+        padding: 0;
+        color: $snow-post-message-foreground;
+        background-color: $snow-post-message-background;
+        font-family: $snow-sans;
+        font-size: 1rem;
+        line-height: 1.2;
+        text-align: center;
+        overflow: auto;
+        content: attr(data-snow-message);
+    }
+    
+    &[data-snow-message]:not([data-snow-message=""]):hover::after {
+        visibility: hidden;
+    }
+    
+    *[data-snow-nsfw] {
+        position: relative;
+        -webkit-filter: none;
+        filter: none;
+    }
+    
+    *[data-snow-nsfw]::after {
+        display: block;
+        display: -webkit-flex;
+        -webkit-flex-direction: column;
+        -webkit-align-items: center;
+        -webkit-justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        border: 1px $snow-post-nsfw-border solid;
+        border-radius: .15rem;
+        padding: 0;
+        color: $snow-post-nsfw-foreground;
+        background-color: $snow-post-nsfw-background;
+        font-family: $snow-sans;
+        font-size: 1rem;
+        line-height: 1.2;
+        text-align: center;
+        overflow: auto;
+        content: "This media may contain sensitive material.";
+    }
+    
+    *[data-snow-nsfw]:hover::after {
+        visibility: hidden;
+    }
+    
+    *[title]:not([title=""]):not(a) {
+        border-bottom: dotted currentColor black;
+        cursor: help;
+    }
+    
+    @supports (text-decoration-style: dotted) {
+        *[title]:not([title=""]):not(a) {
+            border: none;
+            text-decoration-line: underline;
+            text-decoration-style: dotted;
+        }
+        
+        abbr {
+            border: none;
+        }
+    }
+    
+    *:lang(en) {
+        quotes: "‘" "’" "“" "”";
+    }
+
+    a[href] {
+        display: inline;
+        text-decoration: underline;
+        text-decoration-style: dashed;
+    }
+    
+    article, section, aside, header, footer, nav, div {
+        display: block;
+        clear: both;
+        margin: 0;
+        padding: 0;
+    }
+    
+    aside {
+        margin: .6em 0;
+        text-align: right;
+    }
+    
+    b, dfn {
+        font-style: inherit;
+        font-weight: bold;
+    }
+    
+    blockquote {
+        margin: .6em 0;
+        border-left: 2px currentColor solid;
+        padding: 0 1.6em 0 calc(1.6em - 2px);
+    }
+    
+    caption {
+        margin: 0;
+        padding: .3em .15em;
+    }
+    
+    cite {
+        font-style: inherit;
+    }
+
+    dd {
+        margin: 0 0 .3em 1.6em;
+        padding: 0;
+    
+        &::before {
+            display: inline;
+            white-space: pre-wrap;
+            content: " : ";
+            
+            dd + & {
+                content: "″ : ";
+            }
+        }
+        
+        &::after {
+            display: block;
+            clear: both;
+            margin: 0;
+            padding: 0;
+            content: "";
+        }
+    }
+    
+    del {
+        text-decoration: line-through;
+    }
+    
+    dl, ul, ol {
+        margin: .3em 0;
+        padding: 0 0 0 1.6em;
+    }
+    
+    dt {
+        display: inline-block;
+        float: left;
+        margin: 0 -.15em;
+        padding: 0 .15em;
+        
+        & + dt::before {
+          content: ", ";
+        }
+    }
+    
+    em {
+        font-style: italic;
+    }
+    
+    figcaption {
+        margin: .3em 0;
+        text-align: center;
+    }
+    
+    figure, iframe, img, svg, video {
+        display: block;
+        margin: auto;
+        border: none;
+        padding: 0;
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
+        width: fit-content;
+        max-width: 100%;
+    }
+    
+    figure {
+        margin: .6em auto;
+    }
+    
+    footer {
+        margin: .3em 0;
+        text-align: right;
+      
+        blockquote > &:last-child::before {
+            content: "– ";
+        }
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        display: block;
+        margin: 0 0 0 .762rem;
+        padding: 0;
+        font-family: $snow-sans;
+        font-size: 1rem;
+        font-weight: inherit;
+        line-height: 1.2;
+        text-align: left;
+    }
+    
+    h1 {
+        font-size: 2.4rem;
+        line-height: 1;
+    }
+    
+    h2 {
+        font-size: 2rem;
+        font-weight: bold;
+        line-height: 1.2;
+    }
+    
+    h3 {
+        font-size: 1.2rem;
+        line-height: 1;
+        
+        &::after {
+            content: " :"
+        }
+    }
+    
+    h4 {
+        text-decoration: underline;
+    }
+    
+    h5 {
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        text-decoration: underline;
+    }
+    
+    h6 {
+        font-family: inherit;
+        font-size: inherit;
+        font-variant: small-caps;
+        line-height: inherit;
+    }
+    
+    header {
+        text-transform: uppercase;
+    }
+    
+    hr {
+        display: block;
+        position: relative;
+        margin: 0;
+        border: none;
+        padding: 0;
+        width: 100%;
+        height: 2.4em;
+        background: transparent;
+        overflow: hidden;
+    
+        &::after {
+            display: block;
+            position: absolute;
+            top: .6em;
+            left: 0;
+            width: 100%;
+            height: 1.2em;
+            text-align: center;
+            white-space: pre;
+            content: "*   *   *";
+        }
+    }
+    
+    i, ins {
+        text-decoration: underline;
+    }
+    
+    iframe[src*="//youtube.com/embed/"], iframe[src*="//www.youtube.com/embed/"] {
+        width: 560px;
+        height: 315px;
+    }
+    
+    mark {
+        padding: 0 .15em;
+    }
+    
+    nav {
+        text-align: left;
+    }
+    
+    ol {
+        list-style-type: upper-roman;
+        
+        li & {
+            list-style-type: decimal-leading-zero;
+            
+            li & {
+                list-style-type: lower-latin;
+                
+                li & {
+                    list-style-type: lower-greek;
+                    
+                    li & {
+                      list-style-type: decimal;
+                    }
+                }
+            }
+        }
+    }
+    
+    p {
+        margin: 0;
+    
+        & + p {
+            margin-top: .6em;
+        }
+    }
+    
+    pre {
+        margin: .6em 0;
+    }
+    
+    small {
+        font-size: 1rem;
+    }
+    
+    strong {
+        font-weight: bold;
+        font-variant: small-caps;
+    }
+    
+    sub {
+        font-size: 1rem;
+        line-height: 0;
+        text-transform: uppercase;
+        
+        h1, h2, h3, h4 {
+            font-size: .5em;
+        }
+    }
+    
+    sup {
+        -webkit-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none;
+    }
+    
+    table {
+        margin: .6em auto;
+        border-collapse: seperate;
+        padding: 0;
+        max-width: 100%;
+        text-align: left;
+    }
+    
+    tbody + tbody::before {
+        display: table-row;
+        height: 1.2em;
+        content: "";
+    }
+    
+    td, th {
+        border: none;
+        border-radius: .075em;
+        padding: .075em;
+        vertical-align: top;
+    
+        & > table:only-child {
+            margin: auto;
+            width: 100%;
+        }
+    }
+
+    th {
+        text-align: center;
+        text-decoration: underline;
+    }
+
+    thead {
+        text-align: center;
+    }
+    
+    u {
+        font-variant: small-caps;
+        text-decoration: none;
+    }
+    
+    ul {
+        list-style-type: circle;
+        
+        li & {
+            list-style-type: square;
+            
+            li & {
+                list-style-type: disc;
+                
+                li & {
+                    list-style-type: circle;
+                    
+                    li & {
+                      list-style-type: square;
+                    }
+                }
+            }
+        }
+    }
+}

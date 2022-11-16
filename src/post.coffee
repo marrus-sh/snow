@@ -1,0 +1,1 @@
+post = ->  #  Renders a post

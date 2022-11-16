@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+*.🌨 #🌨🔓 {
+    display: block;
+    margin: 2.4rem auto;
+    border: 1px $snow-auth-border solid;
+    border-radius: .3rem;
+    padding: 1.2rem 1rem;
+    max-width: 20rem;
+    min-height: 14rem;
+    color: $snow-auth-foreground;
+    background-color: $snow-auth-background;
+    overflow: auto;
+    
+    h1 {
+        display: block;
+        margin: -1.2rem -1rem .6rem;
+        padding: .6rem 1rem;
+        color: $snow-auth-header-foreground;
+        background-color: $snow-auth-header-background;
+        font-size: inherit
+    }
+    
+    p {
+        display: block;
+        margin: 0 0 .6rem;
+        padding: 0;
+        color: $snow-auth-paragraph;
+    }
+
+    input {
+        display: inline-block;
+        margin: 0;
+        border: 1px $snow-auth-input-border solid;
+        padding: .1em .2em;
+        max-width: 10em;
+        height: calc(1.2em - 2px);
+        color: $snow-auth-input-foreground;
+        background-color: $snow-auth-input-background;
+        font-family: inherit;
+        font-size: inherit;
+        line-height: 1;
+    }
+    
+    button {
+        display: inline-block;
+        margin: .6em 1em;
+        border: medium $snow-auth-button-border outset;
+        padding: .1em .2em;
+        color: $snow-auth-button-foreground;
+        background-color: $snow-auth-button-background;
+        font-family: inherit;
+        font-size: inherit;
+        line-height: 1;
+        
+        &:active {
+            border-style: inset;
+        }
+    }
+}
